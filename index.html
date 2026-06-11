@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Athindra Weds Sowndarya</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <div class="scene">
+
+        <!-- Floating dots
+
+    <div class="dot dot1"></div>
+    <div class="dot dot2"></div> -->
+        <!-- FLOWER SHOWER -->
+
+        <div class="flower-container">
+
+            <img src="img/flower-new.png" class="petal">
+            <img src="img/flower-new.png" class="petal">
+            <img src="img/purple flower.png" class="petal">
+            <img src="img/flower-new.png" class="petal">
+            <img src="img/flower-new.png" class="petal">
+            <img src="img/purple flower.png" class="petal">
+            <img src="img/flower-new.png" class="petal">
+            <img src="img/flower-new.png" class="petal">
+            <img src="img/purple flower.png" class="petal">
+            <img src="img/flower-new.png" class="petal">
+            <img src="img/purple flower.png" class="petal">
+            <img src="img/flower-new.png" class="petal">
+            <img src="img/flower-new.png" class="petal">
+        </div>
+
+        <!-- Envelope -->
+
+        <div class="envelope">
+
+            <!-- Back -->
+
+            <div class="back"></div>
+
+            <!-- Left flap -->
+
+            <div class="left-flap"></div>
+
+            <!-- Right flap -->
+
+            <div class="right-flap"></div>
+
+            <!-- Bottom flap -->
+
+            <div class="bottom-flap"></div>
+
+            <!-- Top flap -->
+
+            <div class="top-flap"></div>
+
+            <!-- Seal -->
+
+            <div class="seal">
+                OPEN
+            </div>
+
+        </div>
+
+        <!-- Text -->
+
+        <div class="text">
+
+            <h1>You're Invited</h1>
+
+            <p>Tap the envelope to open your invitation</p>
+
+        </div>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+    <script>
+
+        gsap.to(".top-flap", {
+            rotateX: 180,
+            duration: 1.5,
+            ease: "power3.inOut",
+            paused: true
+        });
+
+        const flap = gsap.getTweensOf(".top-flap")[0];
+
+        document.querySelector(".envelope").addEventListener("click", () => {
+
+            // if (flap.reversed()) {
+            //     flap.play();
+            // } else {
+            //     flap.reverse();
+            // }
+
+            flap.play();
+
+            // Redirect after animation completes
+            setTimeout(() => {
+                window.location.href = "athindra-weds-sowndarya.html";
+            }, 100);
+
+        });
+
+
+        /* FLOWER SHOWER */
+
+        gsap.utils.toArray(".petal").forEach((petal) => {
+
+            gsap.set(petal, {
+                x: Math.random() * window.innerWidth,
+                y: Math.random() * -500,
+                rotation: Math.random() * 360,
+                scale: 0.5 + Math.random()
+            });
+
+            function fall() {
+
+                gsap.to(petal, {
+                    y: window.innerHeight + 200,
+                    x: `+=${Math.random() * 300 - 150}`,
+                    rotation: "+=720",
+                    duration: 6 + Math.random() * 5,
+                    ease: "none",
+                    onComplete: () => {
+
+                        gsap.set(petal, {
+                            y: -200,
+                            x: Math.random() * window.innerWidth
+                        });
+
+                        fall();
+                    }
+                });
+
+            }
+
+            fall();
+
+        });
+
+
+    </script>
+
+</body>
+
+</html>
