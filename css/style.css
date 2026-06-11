@@ -1,1 +1,316 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
+body{
+    width:100%;
+    height:100vh;
+    overflow:hidden;
+    background:#d3e9c3;
+    font-family:'Cormorant Garamond', serif;
+}
+
+/* CENTER EVERYTHING */
+
+.scene{
+    width:100%;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    position:relative;
+}
+
+/* ENVELOPE */
+
+.envelope{
+    position:relative;
+    width:320px;
+    height:220px;
+}
+
+/* BACK */
+
+.back{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:#d9d2bd;
+    border-radius:2px;
+    box-shadow:0 20px 35px rgba(0,0,0,0.12);
+}
+
+/* LEFT FLAP */
+
+.left-flap{
+    position:absolute;
+    width:0;
+    height:0;
+    border-top:110px solid transparent;
+    border-bottom:110px solid transparent;
+    border-left:160px solid #cfc7b0;
+    left:0;
+    top:0;
+    z-index:2;
+}
+
+/* RIGHT FLAP */
+
+.right-flap{
+    position:absolute;
+    width:0;
+    height:0;
+    border-top:110px solid transparent;
+    border-bottom:110px solid transparent;
+    border-right:160px solid #cfc7b0;
+    right:0;
+    top:0;
+    z-index:2;
+}
+
+/* BOTTOM FLAP */
+
+.bottom-flap{
+    position:absolute;
+    width:0;
+    height:0;
+    border-left:160px solid transparent;
+    border-right:160px solid transparent;
+    border-bottom:110px solid #d5ccb5;
+    bottom:0;
+    z-index:3;
+}
+
+/* TOP FLAP */
+
+.top-flap{
+    position:absolute;
+    width:0;
+    height:0;
+    border-left:160px solid transparent;
+    border-right:160px solid transparent;
+    border-top:110px solid #e0d8c1;
+    top:0;
+    z-index:4;
+    transform-origin:top;
+}
+
+/* GOLD SEAL */
+
+.seal{
+    position:absolute;
+    width:70px;
+    height:70px;
+    background:#d89b2d;
+    border-radius:50%;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    z-index:10;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:white;
+    font-size:12px;
+    letter-spacing:3px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,0.15);
+}
+
+/* TEXT */
+
+.text{
+    margin-top:90px;
+    text-align:center;
+}
+
+.text h1{
+    font-size:80px;
+    font-family:'Great Vibes', cursive;
+    color:#8c8c8c;
+    font-weight:400;
+}
+
+.text p{
+    margin-top:10px;
+    color:#8c8c8c;
+    font-size:20px;
+}
+
+/* DOTS */
+
+.dot{
+    position:absolute;
+    border-radius:50%;
+}
+
+.dot1{
+    width:12px;
+    height:12px;
+    background:#ff4da0;
+    top:80px;
+    left:48%;
+}
+
+.dot2{
+    width:8px;
+    height:8px;
+    background:#ffb400;
+    top:120px;
+    left:52%;
+}
+
+/* FLOWER SHOWER */
+
+.flower-container{
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    overflow:hidden;
+    pointer-events:none;
+}
+
+.petal{
+    position:absolute;
+    width:28px;
+    top:-100px;
+    left:0;
+}
+
+/* ==========================
+   MOBILE RESPONSIVE
+========================== */
+
+@media screen and (max-width:768px){
+
+    .envelope{
+        width:260px;
+        height:180px;
+    }
+
+    /* Flaps */
+
+    .left-flap{
+        border-top:90px solid transparent;
+        border-bottom:90px solid transparent;
+        border-left:130px solid #cfc7b0;
+    }
+
+    .right-flap{
+        border-top:90px solid transparent;
+        border-bottom:90px solid transparent;
+        border-right:130px solid #cfc7b0;
+    }
+
+    .bottom-flap{
+        border-left:130px solid transparent;
+        border-right:130px solid transparent;
+        border-bottom:90px solid #d5ccb5;
+    }
+
+    .top-flap{
+        border-left:130px solid transparent;
+        border-right:130px solid transparent;
+        border-top:90px solid #e0d8c1;
+    }
+
+    /* Seal */
+
+    .seal{
+        width:60px;
+        height:60px;
+        font-size:10px;
+        letter-spacing:2px;
+    }
+
+    /* Text */
+
+    .text{
+        margin-top:60px;
+        padding:0 15px;
+    }
+
+    .text h1{
+        font-size:52px;
+        line-height:1.1;
+    }
+
+    .text p{
+        font-size:16px;
+    }
+
+    /* Petals */
+
+    .petal{
+        width:20px;
+    }
+
+    .dot1{
+        width:10px;
+        height:10px;
+    }
+
+    .dot2{
+        width:6px;
+        height:6px;
+    }
+}
+
+/* Small Phones */
+
+@media screen and (max-width:480px){
+
+    .envelope{
+        width:220px;
+        height:150px;
+    }
+
+    .left-flap{
+        border-top:75px solid transparent;
+        border-bottom:75px solid transparent;
+        border-left:110px solid #cfc7b0;
+    }
+
+    .right-flap{
+        border-top:75px solid transparent;
+        border-bottom:75px solid transparent;
+        border-right:110px solid #cfc7b0;
+    }
+
+    .bottom-flap{
+        border-left:110px solid transparent;
+        border-right:110px solid transparent;
+        border-bottom:75px solid #d5ccb5;
+    }
+
+    .top-flap{
+        border-left:110px solid transparent;
+        border-right:110px solid transparent;
+        border-top:75px solid #e0d8c1;
+    }
+
+    .seal{
+        width:50px;
+        height:50px;
+        font-size:9px;
+    }
+
+    .text{
+        margin-top:40px;
+    }
+
+    .text h1{
+        font-size:42px;
+    }
+
+    .text p{
+        font-size:14px;
+    }
+}
