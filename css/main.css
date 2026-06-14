@@ -71,14 +71,14 @@ body{
 }
 
 .invite-text{
-    color:#666;
+    color:#595959;
     font-size:18px;
     line-height:1.5;
     margin-bottom:25px;
 }
 
 .name{
-    font-family:'Great Vibes', cursive;
+    font-family:'Dancing Script', cursive;
     font-size:90px;
     color:#d14c63;
     line-height:1;
@@ -388,7 +388,7 @@ body{
 
 .venue-title{
     font-family:'Great Vibes', cursive;
-    font-size:58px;
+    font-size:px;
     color:#b86a79;
     margin:10px 0 20px;
 }
@@ -397,6 +397,32 @@ body{
     color:#777;
     font-size:15px;
     margin-bottom:30px;
+}
+
+.contact-details {
+    margin-top: 25px;
+    text-align: center;
+    color: #7a6a6a;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.rsvp-section{
+    text-align:center;
+    margin-top:20px;
+    color:#b76e79;
+    font-family:'Marcellus', serif;
+    line-height:1.8;
+    font-size:16px;
+    margin-bottom: 15px;
+}
+.contact-details p {
+    margin: 5px 0;
+    font-size: 18px;
+}
+
+.contact-details strong {
+    color: #c07a8a;
+    letter-spacing: 2px;
 }
 
 .map-container{
